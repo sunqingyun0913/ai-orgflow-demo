@@ -32,35 +32,31 @@
 
 ## 📸 界面截图
 
-> 把截图文件放到 `docs/screenshots/` 目录下（文件名与下方一致），README 里的图片就会自动显示。
+> 📷 截图待补充。截好图后按下面的文件名放进 `docs/screenshots/` 目录，再把对应的注释取消即可显示。
 
-### 登录页
+| 页面 | 建议文件名 | 说明 |
+| :--- | :--- | :--- |
+| 登录页 | `01-login.png` | 卡片式登录，页面直接列出演示账号 |
+| 首页工作台 | `02-dashboard.png` | 欢迎语 + 4 张统计卡片 + 最新公告 |
+| 部门管理 | `03-department.png` | 树形组织架构，含员工人数与子部门 |
+| 员工通讯录 | `04-employee.png` | 分页表格 + 姓名/部门/状态筛选 |
+| 日程与公告 | `05-schedule.png` | 公司公告时间线 + 日程列表 |
+| 个人中心 | `06-profile.png` | 我的信息 + 修改密码 |
+| 用户账号管理 | `07-user.png` | 仅管理员可见，含启用/禁用开关 |
+
+<!-- 截图准备好后，把下面的注释取消（去掉每行开头的 ! 和空格），并把上面的表格删掉：
 
 ![登录页](docs/screenshots/01-login.png)
-
-### 首页（工作台）
-
-![首页](docs/screenshots/02-dashboard.png)
-
-### 部门管理（树形组织架构）
-
+![首页工作台](docs/screenshots/02-dashboard.png)
 ![部门管理](docs/screenshots/03-department.png)
-
-### 员工通讯录
-
 ![员工通讯录](docs/screenshots/04-employee.png)
-
-### 日程与公告
-
-![日程管理](docs/screenshots/05-schedule.png)
-
-### 个人中心
-
+![日程与公告](docs/screenshots/05-schedule.png)
 ![个人中心](docs/screenshots/06-profile.png)
+![用户账号管理](docs/screenshots/07-user.png)
 
-### 用户账号管理（仅管理员可见）
+-->
 
-![用户管理](docs/screenshots/07-user.png)
+建议截图尺寸 **1600×900 左右**（在 1920×1080 屏幕上按窗口截图即可），这样在 GitHub 上显示清晰又不会太大。
 
 ---
 
