@@ -1,0 +1,113 @@
+/* ===== 全局基础样式：浅色简洁风格 ===== */
+:root {
+  --of-primary: #2f6fed;
+  --of-bg: #f5f7fb;
+  --of-card-bg: #ffffff;
+  --of-text: #1f2937;
+  --of-text-secondary: #6b7280;
+  --of-border: #e5e7eb;
+  --of-radius: 8px;
+  --of-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+  --of-sidebar-bg: #ffffff;
+
+  /* 让 Element Plus 主色与主题一致 */
+  --el-color-primary: #2f6fed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--of-bg);
+  color: var(--of-text);
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', Arial, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--of-primary);
+  text-decoration: none;
+}
+
+/* 通用页面容器 */
+.page-container {
+  padding: 16px;
+}
+
+/* 通用卡片 */
+.of-card {
+  background: var(--of-card-bg);
+  border: 1px solid var(--of-border);
+  border-radius: var(--of-radius);
+  box-shadow: var(--of-shadow);
+  padding: 16px;
+}
+
+/* 卡片标题 */
+.of-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.of-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--of-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 搜索工具条 */
+.of-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* 分页容器统一靠右 */
+.of-pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+/* 表格空数据文字颜色 */
+.el-table__empty-text {
+  color: var(--of-text-secondary);
+}
+
+/* 滚动条细化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

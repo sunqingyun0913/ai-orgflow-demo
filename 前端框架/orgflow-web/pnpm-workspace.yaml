@@ -1,0 +1,5 @@
+# pnpm 11 起，构建脚本白名单写在这里（package.json 的 pnpm 字段已不再被读取）。
+# esbuild 的 postinstall 负责把平台二进制释放到 esbuild/bin/esbuild.exe；
+# 不批准会让 pnpm install 以 ERR_PNPM_IGNORED_BUILDS 失败，vite build 也随之起不来。
+allowBuilds:
+  esbuild: true

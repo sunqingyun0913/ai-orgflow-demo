@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: orgflow-backend
+
+  datasource:
+    # 数据库连接：优先读环境变量，未设置时用下面的本机默认值。
+    # 部署到服务器时请设置（避免把真实密码写进公开仓库）：
+    #   PowerShell:  $env:MYSQL_HOST="127.0.0.1"; $env:MYSQL_PASSWORD="你的密码"
+    #   Linux:       export MYSQL_HOST=127.0.0.1; export MYSQL_PASSWORD=你的密码
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:orgflow}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&characterEncoding=utf-8
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 2
+      maximum-pool-size: 10
+      connection-timeout: 10000
+
+  # 统一日期时间格式，前端按 yyyy-MM-dd HH:mm:ss 解析
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+mybatis-plus:
+  configuration:
+    # department_id / create_time 等下划线字段自动映射到 Java 驼峰属性
+    map-underscore-to-camel-case: true
+    # 需要看 SQL 时改成 org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+
+# 业务自定义配置
+orgflow:
+  jwt:
+    # 签名密钥：优先读环境变量 ORGFLOW_JWT_SECRET，未设置时用下面的开发默认值。
+    # 部署/答辩演示前建议设置环境变量：
+    #   PowerShell:  $env:ORGFLOW_JWT_SECRET="随便一串足够长的随机字符串"
+    # 使用内置默认值时，应用启动日志会打印醒目告警（密钥一旦泄露，任何人都能离线伪造管理员 token）。
+    secret: ${ORGFLOW_JWT_SECRET:orgflow-bishe-secret-key-2026-please-change-me}
+    # token 有效期（毫秒），默认 7 天
+    expire: 604800000
+
+logging:
+  level:
+    root: info
+    com.orgflow: info
